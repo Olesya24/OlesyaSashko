@@ -1,21 +1,12 @@
 package hw1.division;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import hw1.BasicClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class DivisionTest {
-
-    protected Calculator calculator;
-
-    @BeforeMethod
-    public void setCalculator(){
-        calculator = new Calculator();
-    }
+public class DivisionTest extends BasicClass {
 
     @DataProvider
     public Object[][] dataProviderDouble(){
@@ -43,10 +34,5 @@ public class DivisionTest {
     @Test(dataProvider = "dataProviderLong")
     public void divTwoLongTest(long a, long b, long expectedResult){
         assertEquals(calculator.div(a, b), expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        calculator = null;
     }
 }

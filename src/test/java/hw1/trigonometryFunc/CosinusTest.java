@@ -1,21 +1,12 @@
 package hw1.trigonometryFunc;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import hw1.BasicClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertNotEquals;
+import static org.testng.Assert.*;
 
-public class CosinusTest {
-    protected Calculator calculator;
-
-    @BeforeMethod
-    public void setCalculator(){
-        calculator = new Calculator();
-    }
+public class CosinusTest extends BasicClass {
 
     @DataProvider
     public Object[][] dataProviderArgs(){
@@ -27,11 +18,5 @@ public class CosinusTest {
     @Test(dataProvider = "dataProviderArgs")
     public void cosMethodFailedTest(double a, double expectedResult){ //а в реализации специально допущена ошибка при вычислении косинуса?
         assertEquals(calculator.cos(Math.toRadians(a)), expectedResult);
-    }
-
-
-    @AfterMethod
-    public void tearDown(){
-        calculator = null;
     }
 }

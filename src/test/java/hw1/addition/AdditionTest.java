@@ -1,20 +1,13 @@
 package hw1.addition;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import hw1.BasicClass;
+
 import static org.testng.Assert.*;
 
-public class AdditionTest {
-    protected Calculator calculator;
-
-    @BeforeMethod
-    public void setCalculator(){
-        calculator = new Calculator();
-    }
+public class AdditionTest extends BasicClass{
 
     @DataProvider
     public Object[][] dataProviderDouble() {
@@ -44,10 +37,5 @@ public class AdditionTest {
     @Test(dataProvider = "dataProviderLong")
     public void sumTwoLongTest(long a, long b, long expectedResult){
         assertEquals(calculator.sum(a, b), expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        calculator = null;
     }
 }

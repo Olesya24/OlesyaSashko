@@ -1,20 +1,12 @@
 package hw1.subtraction;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import hw1.BasicClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.*;
 
-public class SubtractionTest {
-    protected Calculator calculator;
-
-    @BeforeMethod
-    public void setCalculator(){
-        calculator = new Calculator();
-    }
+public class SubtractionTest extends BasicClass {
 
     @DataProvider
     public Object[][] dataProviderDouble(){
@@ -41,10 +33,5 @@ public class SubtractionTest {
     @Test(dataProvider = "dataProviderLong")
     public void subTwoLongTest(long a, long b, long expectedResult){
         assertEquals(calculator.sub(a, b), expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        calculator = null;
     }
 }

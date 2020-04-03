@@ -1,21 +1,12 @@
 package hw1.trigonometryFunc;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import hw1.BasicClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.*;
 
-public class SinusTest {
-
-    protected Calculator calculator;
-
-    @BeforeMethod
-    public void setCalculator(){
-        calculator = new Calculator();
-    }
+public class SinusTest extends BasicClass {
 
     @DataProvider
     public Object[][] dataProviderArgs(){
@@ -29,10 +20,5 @@ public class SinusTest {
     @Test(dataProvider = "dataProviderArgs")
     public void sinMethodTest(double a, double expectedResult){
         assertEquals(calculator.sin(Math.toRadians(a)), expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        calculator = null;
     }
 }

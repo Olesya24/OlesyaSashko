@@ -1,20 +1,12 @@
 package hw1.multiplication;
 
-import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import hw1.BasicClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.*;
 
-public class MultiplicationTest {
-    protected Calculator calculator;
-
-    @BeforeMethod
-    public void setCalculator(){
-        calculator = new Calculator();
-    }
+public class MultiplicationTest extends BasicClass {
 
     @DataProvider
     public Object[][] dataProviderDouble(){
@@ -41,10 +33,5 @@ public class MultiplicationTest {
     @Test(dataProvider = "dataProviderLong")
     public void multTwoLongTest(long a, long b, long expectedResult){
         assertEquals(calculator.mult(a, b), expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown(){
-        calculator = null;
     }
 }
