@@ -13,7 +13,7 @@
         <profile>
             <id>AddAndSubstractTests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>${project.basedir}/src/test/resources/hw1/AddAndSubTests.xml</suite.xml>
@@ -39,6 +39,36 @@
                 <suite.xml>${project.basedir}/src/test/resources/hw1/allTests.xml</suite.xml>
             </properties>
         </profile>
+
+
+        <profile>
+            <id>hw2AllTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw2/allTestsHw2.xml</suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw2Ex1</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw2/ex1.xml</suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw2Ex2</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw2/ex2.xml</suite.xml>
+            </properties>
+        </profile>
+
     </profiles>
 
     <properties>
@@ -51,6 +81,10 @@
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
 
         <calculator.version>1.0</calculator.version>
+        <seleniumhq.version>3.141.59</seleniumhq.version>
+        <webdrivermanager.version>3.8.1</webdrivermanager.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <logback.version>1.2.3</logback.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -71,6 +105,29 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${seleniumhq.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${webdrivermanager.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
         </dependency>
     </dependencies>
     <build>
