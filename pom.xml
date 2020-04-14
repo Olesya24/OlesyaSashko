@@ -44,7 +44,7 @@
         <profile>
             <id>hw2AllTests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>${project.basedir}/src/test/resources/hw2/allTestsHw2.xml</suite.xml>
@@ -66,6 +66,36 @@
             </activation>
             <properties>
                 <suite.xml>${project.basedir}/src/test/resources/hw2/ex2.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw3AllTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw3/allTests.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw3Ex1</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw3/ex1.xml</suite.xml>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>hw3Ex2</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw3/ex2.xml</suite.xml>
             </properties>
         </profile>
 
