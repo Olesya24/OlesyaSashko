@@ -14,7 +14,7 @@ public class Ex2AssertsOnPageTests extends BasicClass {
         UserIndexPage userIndexPage = new UserIndexPage(driver);
         OtherElementsOnPage otherElementsOnPage = new OtherElementsOnPage(driver);
         // 1. Open test site by URL
-        // Look at CommonMethods.setUp();
+
 
         // 2. Assert Browser Title
         assertEquals(userIndexPage.getTitle(), "Home Page");
