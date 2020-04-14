@@ -20,7 +20,7 @@ public class Ex2AssertsOnPageTests extends BasicClass {
         assertEquals(userIndexPage.getTitle(), "Home Page");
 
         // 3. Perform login
-        userIndexPage.performLogin(properties.getProperty("user"), properties.getProperty("password"));
+        userIndexPage.performLogin(USER, PASSWORD);
 
         // 4. Assert User name in the left-top side of screen that user is loggined
         assertEquals(userIndexPage.getUserNameText(), "ROMAN IOVLEV");
