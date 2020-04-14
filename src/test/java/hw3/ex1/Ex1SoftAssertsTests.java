@@ -21,7 +21,7 @@ public class Ex1SoftAssertsTests extends BasicClass {
         softAssert.assertEquals(userIndexPage.getTitle(), "Home Page");
 
         // 3. Perform login
-        userIndexPage.performLogin(properties.getProperty("user"), properties.getProperty("password") );
+        userIndexPage.performLogin(USER, PASSWORD);
 
         // 4. Assert username is loggined
         softAssert.assertEquals(userIndexPage.getUserNameText(), "ROMAN IOVLEV");
