@@ -15,13 +15,13 @@ public class Ex1SoftAssertsTests extends BasicClass {
         SoftAssert softAssert = new SoftAssert();
         UserIndexPage userIndexPage = new UserIndexPage(driver);
         // 1. Open test site by URL
-        // in BasicClass
+        openTestSite(URL);
 
         // 2. Assert Browser Title
         softAssert.assertEquals(userIndexPage.getTitle(), "Home Page");
 
         // 3. Perform login
-        userIndexPage.performLogin(properties.getProperty("user"), properties.getProperty("password") );
+        userIndexPage.performLogin(USER, PASSWORD);
 
         // 4. Assert username is loggined
         softAssert.assertEquals(userIndexPage.getUserNameText(), "ROMAN IOVLEV");

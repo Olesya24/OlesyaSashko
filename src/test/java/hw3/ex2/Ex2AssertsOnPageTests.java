@@ -14,13 +14,13 @@ public class Ex2AssertsOnPageTests extends BasicClass {
         UserIndexPage userIndexPage = new UserIndexPage(driver);
         OtherElementsOnPage otherElementsOnPage = new OtherElementsOnPage(driver);
         // 1. Open test site by URL
-        // Look at CommonMethods.setUp();
+        openTestSite(URL);
 
         // 2. Assert Browser Title
         assertEquals(userIndexPage.getTitle(), "Home Page");
 
         // 3. Perform login
-        userIndexPage.performLogin(properties.getProperty("user"), properties.getProperty("password"));
+        userIndexPage.performLogin(USER, PASSWORD);
 
         // 4. Assert User name in the left-top side of screen that user is loggined
         assertEquals(userIndexPage.getUserNameText(), "ROMAN IOVLEV");
