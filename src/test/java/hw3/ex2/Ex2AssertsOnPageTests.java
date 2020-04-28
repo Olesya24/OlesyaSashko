@@ -15,8 +15,7 @@ public class Ex2AssertsOnPageTests extends BasicClass {
         OtherElementsOnPage otherElementsOnPage = new OtherElementsOnPage(driver);
         // 1. Open test site by URL
         openTestSite(URL);
-
-        // 2. Assert Browser Title
+       // 2. Assert Browser Title
         assertEquals(userIndexPage.getTitle(), "Home Page");
 
         // 3. Perform login
