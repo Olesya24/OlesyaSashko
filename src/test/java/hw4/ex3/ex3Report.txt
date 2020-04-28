@@ -1,0 +1,41 @@
+Analysis your current solution from the TAF architecture point of view
+
+a.	layers have already implemented
+
+        1. Test logic layer
+            * src/test/java/hw4/ex1/Ex1
+            * src/test/java/hw4/ex2/Ex2
+
+        2. Test logic implementation layer
+            * src/main/java/hw4
+                    - Patterns: Page Object, Composite, Fluent, Builder
+                    - TestNg
+
+        3. Test data layer
+            * MetalsAndColorsDataProvider
+                    - Pattern: Data Provider
+            * src/test/java/hw4/config.properties
+            * BasicClass
+
+        4. Test running layer
+                * TestNg
+                * Maven
+                * surefire plugin
+                * suites.xml files for profiles
+
+        7. Configuration layer
+        configuration for browser in setUp method in BasicClass
+                * browser Chrome, version: 80.0.3987.163
+                * Maximazed window configuration
+
+b.	layers have already missed
+
+        * Report ang log layer
+        * Services layer
+        * Utils layer
+
+c.	how could be current solution improved by
+
+        1. Adding Report ang log layer: Allure, log4j logger
+        2. Adding Services layer: use DB for data
+        3. Utils layer: special classes with logic
