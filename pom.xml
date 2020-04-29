@@ -132,7 +132,7 @@
         <profile>
             <id>hw5AllTests</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>${project.basedir}/src/test/resources/hw5/allTests.xml</suite.xml>
@@ -158,6 +158,16 @@
                 <suite.xml>${project.basedir}/src/test/resources/hw5/ex2.xml</suite.xml>
             </properties>
         </profile>
+
+        <profile>
+            <id>hw6AllTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.basedir}/src/test/resources/hw6/allTests.xml</suite.xml>
+            </properties>
+        </profile>
 </profiles>
 
     <properties>
@@ -173,10 +183,12 @@
         <calculator.version>1.0</calculator.version>
         <seleniumhq.version>3.141.59</seleniumhq.version>
         <webdrivermanager.version>3.8.1</webdrivermanager.version>
+        <cucumber.version>5.6.0</cucumber.version>
         <allure.version>2.13.2</allure.version>
         <aspectj.version>1.8.10</aspectj.version>
         <slf4j.version>1.7.25</slf4j.version>
         <logback.version>1.2.3</logback.version>
+        <lombok.vesrion>1.18.12</lombok.vesrion>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -233,6 +245,26 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.vesrion}</version>
         </dependency>
 
     </dependencies>
